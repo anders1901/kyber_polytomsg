@@ -1,0 +1,24 @@
+### JupyterNotebooks ###
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
+### Python ###
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+### VSCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
