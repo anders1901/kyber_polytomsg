@@ -288,7 +288,7 @@ def poly_decompress(a):
             a = a[1:]
 
     elif DV == 5:
-        for i in range(KYBER_N // 8):
+        for i in range(N // 8):
             t = [0] * 8
             t[0] = (a[0] >> 0) & 0xFF
             t[1] = ((a[0] >> 5) | (a[1] << 3)) & 0xFF

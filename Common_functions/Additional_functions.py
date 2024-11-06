@@ -17,9 +17,6 @@ byte_jump_ = 28
 # Shift for loop on bits
 compress_len_ = 44
 
-# 
-SERIAL_BYTES = 128
-
 # def get_indexes(compress_index):
 def get_compress_index_window(compress_index):
     """
@@ -93,7 +90,7 @@ def hex_sk_to_int_sk(hex_sk):
     """
     s = []
     for poly_index in range(K):
-        s_ = poly_frombytes(unhexlify(hex_sk[(poly_index)*SK_BYTES:(poly_index+1)*SK_BYTES]))
+        s_ = poly_frombytes(unhexlify(hex_sk[(poly_index)*POLY_BYTES*2:(poly_index+1)*POLY_BYTES*2]))
         invntt(s_)
         s_ = poly_frommont(s_)
         s_ = poly_reduce(s_)

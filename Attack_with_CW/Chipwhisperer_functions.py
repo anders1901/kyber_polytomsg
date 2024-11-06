@@ -1,3 +1,16 @@
+# C serialized chunks
+if K == 2:
+    C_SERIAL_BYTES = 128
+elif K == 3:
+    C_SERIAL_BYTES = 64
+elif K == 4:
+    C_SERIAL_BYTES = 32
+else:
+    raise ValueError("Wrong K used, must be between {2, 3, 4}")
+
+# SK serialized chunks
+SERIAL_BYTES = 128
+
 def disconnect_cw():
     """
     Disconnects the Chipwhisperer
@@ -79,8 +92,8 @@ def serialize_c(C1, C2):
     C_ = np.array(C1 + C2).astype(np.uint8)
     
     C_serial = []
-    for len_ in range(0, C_BYTES, SERIAL_BYTES):
-        c_list_int = C_[len_:len_ + SERIAL_BYTES]
+    for len_ in range(0, C_BYTES, C_SERIAL_BYTES):
+        c_list_int = C_[len_:len_ + C_SERIAL_BYTES]
         c_serial = np.ndarray.tobytes(np.array(c_list_int), 'C')
         C_serial.append(c_serial)
     return C_serial
@@ -91,6 +104,7 @@ def send_c(serialized_c, reset = False):
     """
     if reset:
         reset_c()
+        
     time.sleep(1)
     for c_serial in serialized_c:
         target.simpleserial_write(commands["send_c"], c_serial)
@@ -118,9 +132,9 @@ def hex_c_to_int_c1_c2(hex_c):
     """
     
     """
-    c1 = polyvec_decompress(unhexlify(hex_c[:K*C1_BYTES]))
+    c1 = polyvec_decompress(unhexlify(hex_c[:2*C1_BYTES]))
         
-    c2 = poly_decompress(unhexlify(hex_c[K*C1_BYTES:]))
+    c2 = poly_decompress(unhexlify(hex_c[2*C1_BYTES:]))
     return c1, c2   
 
 
@@ -129,6 +143,7 @@ def reset_sk():
     
     """
     target.simpleserial_write(commands["reset_offset_sk"], bytes())
+
     
 def serialize_sk(SK):
     """
@@ -153,7 +168,7 @@ def send_sk(serialized_sk, reset = False):
     for sk_serial in serialized_sk:
         target.simpleserial_write(commands["send_sk"], sk_serial)
         time.sleep(0.5)
-        
+
 def get_full_sk_hex_str():
     """
     
