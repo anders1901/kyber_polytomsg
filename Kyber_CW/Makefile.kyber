@@ -1,0 +1,30 @@
+#######################################################
+########### Makefile for .c code in fkyber/ ###########
+#######################################################
+CRYPTO_LIB = ../kyber/ref
+
+EXTRA_LIB = ../extra
+
+# Base headers for kyber ref functions
+HEADERS  = params.h kem.h indcpa.h polyvec.h poly.h ntt.h cbd.h reduce.c verify.h symmetric.h
+HEADERS += fips202.h
+
+# Base sources for kyber ref functions
+SRC += kem.c indcpa.c polyvec.c poly.c ntt.c cbd.c reduce.c verify.c
+SRC += fips202.c symmetric-shake.c
+
+ifeq ($(SHUFFLED), 1)
+    HEADERS += $(EXTRA_LIB)/randombytes.h
+    SRC += $(EXTRA_LIB)/poly_shuffle.c $(EXTRA_LIB)/randombytes.c
+else ifeq ($(SHUFFLED), 0)
+    SRC += $(EXTRA_LIB)/poly.c
+else
+    $(error SHUFFLED is neither 0 nor 1, problem)
+endif
+
+VPATH += :../kyber/ref
+EXTRAINCDIRS += ../kyber/ref/
+
+override OBJDIR = .
+
+LDFLAGS += -Wl,--wrap=pqcrystals_kyber512_ref_poly_tomsg,--wrap=pqcrystals_kyber768_ref_poly_tomsg,--wrap=pqcrystals_kyber1024_ref_poly_tomsg

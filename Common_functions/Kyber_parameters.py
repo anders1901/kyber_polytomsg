@@ -17,7 +17,7 @@ N = 256
 
 # According to the security level of Kyber, adjust the following parameter
 # Module size 
-K = 2
+K = 4
 
 if K == 2:
     # Secret parameter

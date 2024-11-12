@@ -1,0 +1,32 @@
+
+########################################
+########################################
+#### Default Options
+
+# EXTRAINCDIRS += $(FIRMWAREPATH)/crypto/
+# VPATH += :$(FIRMWAREPATH)/crypto/
+
+########################################
+########################################
+#### Select the Crypto Library
+
+ifeq ($(CRYPTO_OPTIONS),)
+  ifneq ($(CRYPTO_TARGET),NONE)
+    ${info Blank crypto options, building for AES128}
+    CRYPTO_OPTIONS = AES128C
+  endif
+endif
+
+# ifeq ($(CRYPTO_TARGET),FFKYBER)
+#   include ../Makefile.ffkyber
+
+# else ifeq ($(CRYPTO_TARGET),KYBER)
+ifeq ($(CRYPTO_TARGET),KYBER)
+  include ../Makefile.kyber
+
+else ifeq ($(CRYPTO_TARGET),NONE)
+  #Nothing to do :)
+
+else
+ ${error Unknown or blank CRYPTO_TARGET: $(CRYPTO_TARGET). If supposed to be blank set to NONE to continue}
+endif
