@@ -17,10 +17,6 @@ ifeq ($(CRYPTO_OPTIONS),)
   endif
 endif
 
-# ifeq ($(CRYPTO_TARGET),FFKYBER)
-#   include ../Makefile.ffkyber
-
-# else ifeq ($(CRYPTO_TARGET),KYBER)
 ifeq ($(CRYPTO_TARGET),KYBER)
   include ../Makefile.kyber
 
