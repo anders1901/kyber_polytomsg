@@ -11,6 +11,17 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+### C ###
+*.o
+*.o.d
+*.lst
+*.bin
+*.eep
+*.elf
+*.hex
+*.lss
+*.map
+*.sym
 
 ### VSCode ###
 .vscode/*
