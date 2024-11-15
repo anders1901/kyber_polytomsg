@@ -1,7 +1,7 @@
 import numpy as np
 import math 
 
-from Kyber_parameters import *
+# from Kyber_parameters import *
 
 
 def reduce_modQ(a):

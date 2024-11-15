@@ -1,7 +1,7 @@
 import os 
 
 from binascii import unhexlify
-from Kyber_functions import *
+# from Kyber_functions import *
 
 # Parameters
 

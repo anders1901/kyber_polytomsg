@@ -1,5 +1,9 @@
+import sys
+
 # Setting the parameters of Kyber
- 
+args = sys.argv
+K = int(args[1])
+
 # Size in bytes of hashes and seeds
 SYM_BYTES  = 32
 
@@ -17,7 +21,7 @@ N = 256
 
 # According to the security level of Kyber, adjust the following parameter
 # Module size 
-K = 2
+# K = 2
 
 if K == 2:
     # Secret parameter

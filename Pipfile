@@ -12,6 +12,7 @@ matplotlib = "*"
 tqdm = "*"
 scipy = "*"
 chipwhisperer = "*"
+importlib-metadata = "*"
 
 [dev-packages]
 
