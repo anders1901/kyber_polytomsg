@@ -10,12 +10,12 @@
 ########################################
 #### Select the Crypto Library
 
-ifeq ($(CRYPTO_OPTIONS),)
-  ifneq ($(CRYPTO_TARGET),NONE)
-    ${info Blank crypto options, building for AES128}
-    CRYPTO_OPTIONS = AES128C
-  endif
-endif
+# ifeq ($(CRYPTO_OPTIONS),)
+#   ifneq ($(CRYPTO_TARGET),NONE)
+#     ${info Blank crypto options, building for AES128}
+#     CRYPTO_OPTIONS = AES128C
+#   endif
+# endif
 
 ifeq ($(CRYPTO_TARGET),KYBER)
   include ../Makefile.kyber

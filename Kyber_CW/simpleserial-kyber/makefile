@@ -43,12 +43,13 @@ CFLAGS += -D$(EXTRA_OPTS)
 # Extra option to set SHUFFLED in {0, 1}
 SHUFFLED ?= 0
 
-ifeq ($(CRYPTO_OPTIONS),)
-CRYPTO_OPTIONS = AES128C
-endif
+# ifeq ($(CRYPTO_OPTIONS),)
+# CRYPTO_OPTIONS = AES128C
+# endif
 
 # Add simpleserial project to build
-FIRMWAREPATH = $(CWPATH)/hardware/victims/firmware
+# FIRMWAREPATH = $(CWPATH)/hardware/victims/firmware
+FIRMWAREPATH = ..
 
 # include $(FIRMWAREPATH)/simpleserial/Makefile.simpleserial
 include ../simpleserial/Makefile.simpleserial

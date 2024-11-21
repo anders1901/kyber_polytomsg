@@ -35,8 +35,10 @@
 
 #include "arm_etm.h"
 
-#include "../crypto/fkyber/kyber/ref/params.h"
-#include "../crypto/fkyber/kyber/ref/indcpa.h"
+// #include "../crypto/fkyber/kyber/ref/params.h"
+// #include "../crypto/fkyber/kyber/ref/indcpa.h"
+#include "../kyber/ref/params.h"
+#include "../kyber/ref/indcpa.h"
 
 #if KYBER_K == 2
 #define C_SERIAL_BYTES 128

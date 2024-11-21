@@ -33,6 +33,8 @@ ifeq ($(PLATFORM),)
   endif
 endif
 
+${info firmware path is  '$(FIRMWAREPATH)'}
+
 include $(FIRMWAREPATH)/hal/Makefile.hal
 ifneq ($(MAKECMDGOALS),clean)
 	include ../simpleserial/Makefile.simpleserial
