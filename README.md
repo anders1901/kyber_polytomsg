@@ -1,6 +1,7 @@
 # Kyber poly_tomsg attack
 
-This repository contains the artifact related to the corresponding article.
+This repository contains the artifact related to the: article:
+**"Simple Power Analysis assisted Chosen Cipher-Text Attack on ML-KEM"**
 
 > ⚠️ This artifact is only tested for Linux distributions.
 
@@ -86,12 +87,12 @@ The following is required:
 
 ------
 ## Files
-| Name                      | Description                  |
-| :---                      | :---                         |
-| `Attack_with_CW`          | Attack with ChipWhisperer    |
-| `Attack_without_CW`       | Attack without ChipWhisperer |
-| `Common_functions`        | Useful functions used for the attack |
-| `Kyber_CW`                | Reference implementation of Kyber and ChipWhisperer functions Reference implementation of [Kyber](https://github.com/pq-crystals/kyber) |
+| Name                                         | Description                  |
+| :---                                         | :---                         |
+| 📁 [Attack_with_CW](./Attack_with_CW/)       | Attack with ChipWhisperer    |
+| 📁 [Attack_without_CW](./Attack_without_CW/) | Attack without ChipWhisperer |
+| 📁 [Common_functions](./Common_functions/)   | Useful functions used for the attack |
+| 📁 [Kyber_CW](./Kyber_CW/)                   | Reference implementation of  [Kyber](https://github.com/pq-crystals/kyber) and [ChipWhisperer](https://github.com/newaetech/chipwhispererfunctions)  functions  |
 
 ------
 ## License
@@ -102,5 +103,5 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 
 See [LICENSE.txt](./LICENSE.txt).
 
-This artifact uses the Dilithium reference implementation from [GitHub](https://github.com/pq-crystals/dilithium), under the Apache 2.0 License, as a submodule.
+This artifact uses the Kyber reference implementation from [GitHub](https://github.com/pq-crystals/kyber), under the Apache 2.0 License, as a submodule.
 
