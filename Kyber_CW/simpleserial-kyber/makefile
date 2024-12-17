@@ -25,8 +25,6 @@
 #
 # To rebuild project do "make clean" then "make all".
 #----------------------------------------------------------------------------------------
-CWPATH = /home/kali/chipwhisperer
-
 # Target file name (without extension).
 # This is the base name of the compiled .hex file.
 TARGET = simpleserial-kyber

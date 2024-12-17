@@ -59,7 +59,7 @@ def read_keys_from_KAT(nb_keys = 1, keys_file_name = f"../Common_functions/PQCke
     
     #with open(f"{os.getcwd()}/{keys_file_name}", "r") as file:
     with open(f"{keys_file_name}", "r") as file:
-        # We discard the first flag for the version of Dilithium as well as the first and last \n
+        # We discard the first flag for the version of the algorithm as well as the first and last \n
         lines = file.read().splitlines()[2:-1]
 
         # Raise an error when there is not enough keys in the KAT file
